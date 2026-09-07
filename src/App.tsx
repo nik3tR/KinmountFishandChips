@@ -101,7 +101,7 @@ export default function App() {
           aria-label="Back to top"
         >
           <img
-            src="/KinmountFishandChips//fishandchips.png"
+            src="./fishandchips.png"
             alt="Fish and Chips"
             className="w-20 h-auto object-cover"
           />
@@ -137,7 +137,7 @@ export default function App() {
         className="relative flex items-center justify-center px-8 py-12 md:py-24"
         style={{
           minHeight: "120vh",
-          backgroundImage: "url('/KinmountFishandChips/fishandchipstore.jpg')",
+          backgroundImage: "url('./fishandchipstore.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
