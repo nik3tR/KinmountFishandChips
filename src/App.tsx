@@ -41,6 +41,13 @@ const MENU = [
     ],
   },
   {
+    category: "Chicken",
+    items: [
+      { name: "3pc Chicken Fingers & Fries", desc: "", price: "$15.00" },
+      { name: "3pc Chicken Fingers Only", desc: "", price: "$10.00" },
+    ],
+  },
+  {
     category: "Poutine",
     items: [
       { name: "Regular Poutine", desc: "Hand-Cut fries, curds, gravy", price: "$11.00" },
@@ -66,12 +73,12 @@ const MENU = [
 
 const HOURS = [
   { day: "Monday", hours: "Closed" },
-  { day: "Tuesday", hours: "11:30 am – 8:00 pm" },
-  { day: "Wednesday", hours: "11:30 am – 8:00 pm" },
-  { day: "Thursday", hours: "11:30 am – 8:00 pm" },
-  { day: "Friday", hours: "11:30 am – 9:00 pm" },
-  { day: "Saturday", hours: "11:00 am – 9:00 pm" },
-  { day: "Sunday", hours: "11:00 am – 7:00 pm" },
+  { day: "Tuesday", hours: "Closed" },
+  { day: "Wednesday", hours: "Closed" },
+  { day: "Thursday", hours: "Closed" },
+  { day: "Friday", hours: "12:00 pm – 6:00 pm" },
+  { day: "Saturday", hours: "12:00 pm – 6:00 pm" },
+  { day: "Sunday", hours: "12:00 pm – 6:00 pm" },
 ];
 
 export default function App() {
@@ -156,7 +163,7 @@ export default function App() {
               lineHeight: 1.1,
             }}
           >
-            Fresh Fish and <br className="hidden sm:block" /> Hand-Cut Chips
+            Delicious Fish and <br className="hidden sm:block" /> Hand-Cut Chips
           </h1>
 
           <p style={{ color: "#ffffff", fontSize: "1.25rem", fontWeight: 400 }}>
@@ -284,7 +291,7 @@ export default function App() {
         <div className="mt-10 grid sm:grid-cols-2 gap-12">
           <div className="space-y-6">
             <ContactBlock label="Address">
-              <p>14 Burnt River Road</p>
+              <p>4080 Kawartha Lakes County Road 121</p>
               <p>Kinmount, Ontario K0M 2A0</p>
             </ContactBlock>
             <ContactBlock label="Phone">
@@ -293,7 +300,7 @@ export default function App() {
                 className="hover:underline transition-opacity hover:opacity-70"
                 style={{ color: "#1b3461" }}
               >
-                (705) 488-2088
+                (705) 488-1850
               </a>
             </ContactBlock>
             <ContactBlock label="Hours">
