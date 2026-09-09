@@ -285,7 +285,7 @@ export default function App() {
       <div style={{ height: "1px", backgroundColor: "rgba(27,52,97,0.12)", margin: "0 1.5rem" }} />
 
       {/* ── RIVERSIDE SEATING ── */}
-      <div className="py-14 px-40 max-w-5xl mx-auto flex flex-col items-center text-center">
+      <div className="py-14 sm:px-16 md:px-28 lg:px-40 max-w-5xl mx-auto flex flex-col items-center text-center">
         <img
           src="/people_seating.jpg"
           alt="Riverside Seating"
