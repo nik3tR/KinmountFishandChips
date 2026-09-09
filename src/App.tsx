@@ -163,7 +163,7 @@ export default function App() {
               lineHeight: 1.1,
             }}
           >
-            Delicious Fish and <br className="hidden sm:block" /> Hand-Cut Chips
+            Delicious Fish & <br className="hidden sm:block" /> Hand-Cut Chips
           </h1>
 
           <p style={{ color: "#ffffff", fontSize: "1.25rem", fontWeight: 400 }}>
@@ -284,8 +284,33 @@ export default function App() {
       {/* ── DIVIDER ── */}
       <div style={{ height: "1px", backgroundColor: "rgba(27,52,97,0.12)", margin: "0 1.5rem" }} />
 
+      {/* ── RIVERSIDE SEATING ── */}
+      <div className="py-14 px-40 max-w-5xl mx-auto flex flex-col items-center text-center">
+        <img
+          src="/people_seating.jpg"
+          alt="Riverside Seating"
+          className="w-full h-auto object-cover rounded-2xl shadow-lg"
+          style={{ maxHeight: "250px"}}
+        />
+          <p
+          className="mt-4"
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            color: "#1b3461",
+            fontSize: "1.6rem",
+            fontWeight: 500,
+            fontStyle: "italic"
+          }}
+          >
+          Enjoy our Riverside Seating
+        </p>
+      </div>
+
+      {/* ── DIVIDER ── */}
+      {/* <div style={{ height: "1px", backgroundColor: "rgba(27,52,97,0.12)", margin: "0 1.5rem" }} /> */}
+
       {/* ── CONTACT ── */}
-      <section id="contact" className="px-6 py-20 max-w-4xl mx-auto">
+      <section id="contact" className="px-6 py-2 mb-16 max-w-4xl mx-auto">
         <SectionLabel>Find Us</SectionLabel>
 
         <div className="mt-10 grid sm:grid-cols-2 gap-12">
@@ -393,8 +418,8 @@ function ContactBlock({ label, children }: { label: string; children: React.Reac
     <div>
       <p
         style={{
-          fontSize: "0.7rem",
-          letterSpacing: "0.14em",
+          fontSize: "0.8rem",
+          letterSpacing: "0.2em",
           textTransform: "uppercase",
           color: "#c94e2a",
           fontWeight: 700,
@@ -403,7 +428,7 @@ function ContactBlock({ label, children }: { label: string; children: React.Reac
       >
         {label}
       </p>
-      <div style={{ color: "#1a2535", fontSize: "0.95rem", lineHeight: 1.6 }}>{children}</div>
+      <div style={{ color: "#1a2535", fontSize: "1.1rem", lineHeight: 1.6 }}>{children}</div>
     </div>
   );
 }
