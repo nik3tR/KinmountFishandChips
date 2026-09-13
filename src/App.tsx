@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const NAV_LINKS = ["Menu", "Contact"];
 
 const MENU = [
@@ -72,20 +70,24 @@ const MENU = [
 ];
 
 const HOURS = [
-  { day: "Monday", hours: "Closed" },
-  { day: "Tuesday", hours: "Closed" },
-  { day: "Wednesday", hours: "Closed" },
-  { day: "Thursday", hours: "Closed" },
-  { day: "Friday", hours: "12:00 pm – 6:00 pm" },
-  { day: "Saturday", hours: "12:00 pm – 6:00 pm" },
-  { day: "Sunday", hours: "12:00 pm – 6:00 pm" },
+  { day: "Monday – Thursday", hours: "Closed" },
+  { day: "Friday", hours: "12:00 PM – 6:00 PM" },
+  { day: "Saturday", hours: "12:00 PM – 6:00 PM" },
+  { day: "Sunday", hours: "12:00 PM – 6:00 PM" },
 ];
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-
   const scrollTo = (id: string) => {
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
+    const target = document.getElementById(id.toLowerCase());
+    const navHeight = document.querySelector("nav")?.getBoundingClientRect().height ?? 0;
+    const bannerHeight = document.getElementById("season-banner")?.getBoundingClientRect().height ?? 0;
+
+    if (target) {
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - navHeight - bannerHeight,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -98,9 +100,10 @@ export default function App() {
       }}
     >
       {/* ── NAV ── */}
+      <div className="sticky top-0 z-50">
       <nav
         style={{ backgroundColor: "#ffffff" }}
-        className="sticky top-0 z-50 px-6 py-4 flex items-center justify-between shadow-sm"
+        className="px-4 py-3 sm:px-6 sm:py-4 flex items-center justify-between shadow-sm"
       >
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -110,13 +113,13 @@ export default function App() {
           <img
             src="/fishandchips.png"
             alt="Fish and Chips"
-            className="w-20 h-auto object-cover"
+            className="w-14 h-auto object-cover sm:w-20"
           />
           <span
             style={{
               fontFamily: "'Playfair Display', serif",
               color: "#1b3461",
-              fontSize: "1.5rem",
+              fontSize: "clamp(1.1rem, 5vw, 1.5rem)",
               fontWeight: 600,
               letterSpacing: "0.04em",
             }}
@@ -140,10 +143,30 @@ export default function App() {
       </nav>
 
       {/* ── HERO ── */}
+      <section
+        id="season-banner"
+        className="px-4 py-3 sm:px-6 sm:py-4"
+        style={{ backgroundColor: "#1b3461", borderBottom: "1px solid rgba(245,240,230,0.25)" }}
+        aria-label="Season closing announcement"
+      >
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-1 text-center sm:flex-row sm:flex-wrap sm:gap-x-5 sm:gap-y-1">
+          <p className="text-xs font-bold tracking-[0.16em] uppercase" style={{ color: "#f3c56b" }}>
+            ★ Last Day of the Season ★ :
+          </p>
+          <p className="text-sm font-bold" style={{ color: "#ffffff" }}>
+            Thanksgiving Monday, October 12th , 2026
+          </p>
+          {/* <p className="text-sm" style={{ color: "#f5f0e6" }}>
+            <strong>Closing Day Hours: 11:00 AM to 5:00 PM</strong>
+          </p> */}
+        </div>
+      </section>
+      </div>
+
       <header
-        className="relative flex items-center justify-center px-8 py-12 md:py-24"
+        className="relative flex items-center justify-center px-6 py-12 sm:px-8 md:py-24"
         style={{
-          minHeight: "120vh",
+          minHeight: "100svh",
           backgroundImage: "url('/fishandchipstore.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -153,21 +176,36 @@ export default function App() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Content & Buttons - Tile background removed */}
-        <div className="relative z-10 max-w-3xl w-full mx-auto flex flex-col items-center text-center gap-6">
+        <div
+          className="relative z-10 mx-auto flex w-full max-w-6xl -translate-y-[clamp(1.5rem,5vh,5.5rem)] flex-col items-center gap-6 text-center"
+        >
           <h1
+            className="lg:whitespace-nowrap"
             style={{
               fontFamily: "'Playfair Display', serif",
               color: "#ffffff",
-              fontSize: "clamp(2.8rem, 6vw, 4.5rem)",
+              fontSize: "clamp(2.55rem, 4.75vw, 5.4rem)",
               fontWeight: 700,
               lineHeight: 1.1,
             }}
           >
-            Delicious Fish & <br className="hidden sm:block" /> Hand-Cut Chips
+            Thank you for a wonderful Summer!
           </h1>
-
-          <p style={{ color: "#ffffff", fontSize: "1.25rem", fontWeight: 400 }}>
-            Family owned and operated
+          <p
+            style={{
+              color: "#ffffff",
+              fontSize: "clamp(1.2rem, 2vw, 2.2rem)",
+              fontWeight: 400,
+            }}
+          >
+            We look forward to welcoming you back{" "}
+            <em
+              style={{
+                fontWeight: 700,
+              }}
+            >
+              May 1st 2027!
+            </em>
           </p>
 
           {/* Button Container */}
