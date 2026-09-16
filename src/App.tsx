@@ -145,20 +145,17 @@ export default function App() {
       {/* ── HERO ── */}
       <section
         id="season-banner"
-        className="px-4 py-3 sm:px-6 sm:py-4"
-        style={{ backgroundColor: "#1b3461", borderBottom: "1px solid rgba(245,240,230,0.25)" }}
+        className="px-4 py-3 sm:px-6"
+        style={{ backgroundColor: "#15305c", borderBottom: "1px solid rgba(245,240,230,0.25)" }}
         aria-label="Season closing announcement"
       >
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-1 text-center sm:flex-row sm:flex-wrap sm:gap-x-5 sm:gap-y-1">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-1.5 text-center sm:flex-row sm:gap-3">
           <p className="text-xs font-bold tracking-[0.16em] uppercase" style={{ color: "#f3c56b" }}>
             ★ Last Day of the Season ★ :
           </p>
           <p className="text-sm font-bold" style={{ color: "#ffffff" }}>
-            Thanksgiving Monday, October 12th , 2026
+            Thanksgiving Monday, October 12, 2026
           </p>
-          {/* <p className="text-sm" style={{ color: "#f5f0e6" }}>
-            <strong>Closing Day Hours: 11:00 AM to 5:00 PM</strong>
-          </p> */}
         </div>
       </section>
       </div>
@@ -189,7 +186,7 @@ export default function App() {
               lineHeight: 1.1,
             }}
           >
-            Thank you for a wonderful Summer!
+            A Kinmount Tradition, Since 1980
           </h1>
           <p
             style={{
@@ -198,14 +195,7 @@ export default function App() {
               fontWeight: 400,
             }}
           >
-            We look forward to welcoming you back{" "}
-            <em
-              style={{
-                fontWeight: 700,
-              }}
-            >
-              May 1st 2027!
-            </em>
+            Family Owned and Operated
           </p>
 
           {/* Button Container */}
